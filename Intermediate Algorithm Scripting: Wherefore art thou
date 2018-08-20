@@ -1,0 +1,30 @@
+function whatIsInAName(collection, source) {
+  
+  let sourceProp = [];
+  let result = [];
+
+  for(let i in source){
+    sourceProp.push(i);
+  }
+
+  for(let i = 0; i < collection.length;){
+    for(let l = 0; l < sourceProp.length; l++){
+      if(collection[i].hasOwnProperty(sourceProp[l]) === false || collection[i][sourceProp[l]] !== source[sourceProp[l]]){
+        i++;
+        console.log(collection[sourceProp[l]], source[sourceProp[l]]);
+        
+        
+      }
+    }result.push(collection[i]);
+    i++;
+  }
+
+  
+  return result.filter(Boolean);
+  
+}
+
+whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" });
+//should return [{ first: "Tybalt", last: "Capulet" }]
+/*whatIsInAName([{ "apple": 1, "bat": 2 }, { "apple": 1 }, { "apple": 1, "bat": 2, "cookie": 2 }], { "apple": 1, "cookie": 2 }) should return [{ "apple": 1, "bat": 2, "cookie": 2 }].*/
+
