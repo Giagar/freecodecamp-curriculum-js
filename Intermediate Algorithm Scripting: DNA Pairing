@@ -29,3 +29,34 @@ function pairElement(str) {
 }
 
 pairElement("GCG");
+
+
+/*Another way, using switch*/
+function pairElement(str) {
+
+  let b = "";
+  let result = [];
+
+  for(let i = 0; i < str.length; i++){
+    switch(str[i]){
+      case "A":
+      b = "T";
+      break;
+      case "T":
+      b = "A";
+      break;
+      case "C":
+      b = "G";
+      break;
+      case "G":
+      b = "C";
+      break;
+    }
+
+    result.push([str[i],b]);
+  }
+
+  return result;
+}
+
+pairElement("GCG");
