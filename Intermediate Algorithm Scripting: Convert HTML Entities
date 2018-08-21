@@ -1,0 +1,29 @@
+/*Intermediate Algorithm Scripting: Convert HTML Entities
+Convert the characters &, <, >, " (double quote), and ' (apostrophe), in a string to their corresponding HTML entities.
+
+Remember to use Read-Search-Ask if you get stuck. Try to pair program. Write your own code.*/
+
+
+function convertHTML(str) {
+  
+  let source = {
+    "&" : "&amp;",
+    ">" : "&gt;",
+    "<" : "&lt;",
+    "'" : "&apos;",
+    '"' : "&quot;"
+  }
+
+  str = str.split("");
+
+  for(let i = 0; i < str.length; i++){
+    if(/[&<>"']/.test(str[i])){
+      str.splice(i, 1, source[str[i]]);
+    }
+  }
+  
+  return str.join("");
+
+}
+
+convertHTML("Dolce & Gabbana");
