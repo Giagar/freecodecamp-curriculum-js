@@ -31,7 +31,7 @@ function pairElement(str) {
 pairElement("GCG");
 
 
-/*Another way, using switch*/
+/* ------------- Another way, using switch ------------- */
 function pairElement(str) {
 
   let b = "";
