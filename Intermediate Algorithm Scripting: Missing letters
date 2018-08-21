@@ -1,0 +1,27 @@
+/*Intermediate Algorithm Scripting: Missing letters
+Find the missing letter in the passed letter range and return it.
+
+If all letters are present in the range, return undefined.
+
+Remember to use Read-Search-Ask if you get stuck. Try to pair program. Write your own code.*/
+
+
+function fearNotLetter(str) {
+
+  let alph = "abcdefghijklmnopqrstuvwxyz";
+  let ix = alph.indexOf(str[0]);
+  let check = alph.slice(ix, ix+str.length);
+
+  if(str === check){
+    return undefined;
+  }else{
+    for( let i = 0; i < check.length; i++){
+      if( check[i] !== str[i]){
+        return check[i];
+      }
+    }
+  }
+  
+}
+
+fearNotLetter("abce");
