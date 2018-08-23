@@ -11,7 +11,7 @@ function sumPrimes(num) {
   let prime = [];
 
   for(let i = 0; i <= num; i++){
-    if(((i)=>{
+    if(((i) => {
       for(let l = 2; l <= num; l++){
         if (i % l === 0 && l !== i){
           return false;
@@ -23,8 +23,8 @@ function sumPrimes(num) {
     }
   }
 
-  return prime.slice(1).reduce((a,b)=>{
-    return a+b;
+  return prime.slice(1).reduce((a, b)=>{
+    return a + b;
     });
 }
 
