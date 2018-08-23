@@ -1,0 +1,31 @@
+/*Intermediate Algorithm Scripting: Sum All Primes
+Sum all the prime numbers up to and including the provided number.
+
+A prime number is defined as a number greater than one and having only two divisors, one and itself. For example, 2 is a prime number because it's only divisible by one and two.
+
+The provided number may not be a prime.
+
+Remember to use Read-Search-Ask if you get stuck. Try to pair program. Write your own code.*/
+
+function sumPrimes(num) {
+  let prime = [];
+
+  for(let i = 0; i <= num; i++){
+    if(((i)=>{
+      for(let l = 2; l <= num; l++){
+        if (i % l === 0 && l !== i){
+          return false;
+        }
+      }
+      return true
+    })(i) === true){
+      prime.push(i);
+    }
+  }
+
+  return prime.slice(1).reduce((a,b)=>{
+    return a+b;
+    });
+}
+
+sumPrimes(10);
