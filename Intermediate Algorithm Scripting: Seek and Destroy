@@ -22,3 +22,25 @@ function destroyer(arr) {
 }
 
 destroyer([1, 2, 3, 1, 2, 3], 2, 3);
+
+
+/* ----------------- Another way ----------------- */
+function destroyer(arr) {
+  
+  arr = Array.prototype.slice.call(arguments);
+  
+
+  return arr[0].filter((x)=> {
+    for(let i = 1; i < arr.length; i++){
+      if(x === arr[i]){
+        return false;
+      }
+    }
+    return true;
+  });
+
+
+}
+
+destroyer([3, 5, 1, 2, 2], 2, 3, 5);
+
