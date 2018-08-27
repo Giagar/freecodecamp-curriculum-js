@@ -10,7 +10,6 @@ function destroyer(arr) {
   
   arr = Array.prototype.slice.call(arguments);
 
-
   for(let i = 1; i < arr.length; i++){
     while(arr[0].indexOf(arr[i]) !== -1){
       delete arr[0][arr[0].indexOf(arr[i])];
@@ -28,7 +27,6 @@ destroyer([1, 2, 3, 1, 2, 3], 2, 3);
 function destroyer(arr) {
   
   arr = Array.prototype.slice.call(arguments);
-  
 
   return arr[0].filter((x)=> {
     for(let i = 1; i < arr.length; i++){
@@ -38,7 +36,6 @@ function destroyer(arr) {
     }
     return true;
   });
-
 
 }
 
