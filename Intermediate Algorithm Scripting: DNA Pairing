@@ -60,3 +60,24 @@ function pairElement(str) {
 }
 
 pairElement("GCG");
+
+
+/* ------------- Another way, using switch ------------- */
+function pairElement(str) {
+
+  let result = [];
+  let archive = {
+    "G" : "C",
+    "C" : "G",
+    "A" : "T",
+    "T" : "A"
+  }
+
+  str.split("").forEach((x)=>{
+    result.push([x, archive[x]]);
+  })
+
+  return result;
+}
+
+pairElement("GCG");
