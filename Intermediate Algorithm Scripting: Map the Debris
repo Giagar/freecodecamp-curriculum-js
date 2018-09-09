@@ -30,3 +30,21 @@ function orbitalPeriod(arr) {
 }
 
 orbitalPeriod([{name : "sputnik", avgAlt : 35873.5553}]);
+
+
+/* -------------- A slightly different way: using .map() -------------- */
+
+function orbitalPeriod(arr) {
+  var GM = 398600.4418;
+  var earthRadius = 6367.4447;
+
+  let result = arr.map((x)=>{
+    let formula =  Math.round(2 * Math.PI * Math.sqrt(Math.pow((earthRadius + x.avgAlt), 3) / GM));
+
+    return ({name: x.name, orbitalPeriod: formula})
+  })
+
+  return result;
+}
+
+orbitalPeriod([{name : "sputnik", avgAlt : 35873.5553}]);
