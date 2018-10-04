@@ -24,3 +24,23 @@ function diffArray(arr1, arr2) {
 }
 
 diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]);
+
+
+/*---------------- Another way ----------------*/
+
+function diffArray(arr1, arr2) {
+  
+  for(let i = 0; i < arr1.length; i++) {
+    if(arr2.indexOf(arr1[i]) !== -1) {
+      delete arr2[arr2.indexOf(arr1[i])];
+      delete arr1[i];
+    }
+  }
+
+  arr1 = [...arr1, ...arr2];
+
+  return arr1.filter(Boolean);
+
+}
+
+diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]);
